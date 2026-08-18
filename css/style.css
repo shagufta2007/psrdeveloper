@@ -4810,3 +4810,113 @@ select {
     }
 
 }
+/* =====================================================
+   PORTFOLIO FILTER
+===================================================== */
+
+.portfolio-filters {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 40px;
+
+}
+
+
+.filter-btn {
+
+    border: 1px solid var(--border);
+
+    background: transparent;
+
+    color: #999;
+
+    padding: 10px 17px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: .3s ease;
+
+}
+
+
+.filter-btn:hover {
+
+    color: white;
+
+    border-color: var(--primary);
+
+}
+
+
+.filter-btn.active {
+
+    background: var(--primary);
+
+    color: white;
+
+    border-color: var(--primary);
+
+}
+
+
+/* Portfolio cards */
+
+.portfolio-card {
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+}
+
+
+.portfolio-card.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .portfolio-filters {
+
+        justify-content: flex-start;
+
+        gap: 7px;
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .filter-btn {
+
+        padding: 9px 13px;
+
+        font-size: 11px;
+
+    }
+
+}

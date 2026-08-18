@@ -119,3 +119,71 @@ faqItems.forEach(function(item) {
     });
 
 });
+/* =====================================================
+   PORTFOLIO FILTER
+===================================================== */
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const portfolioCards =
+    document.querySelectorAll(".portfolio-card");
+
+
+filterButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        /* Get selected category */
+
+        const filter =
+            button.getAttribute("data-filter");
+
+
+        /* Change active button */
+
+        filterButtons.forEach(function(btn) {
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+
+        /* Filter projects */
+
+        portfolioCards.forEach(function(card) {
+
+            const category =
+                card.getAttribute("data-category");
+
+
+            if (
+                filter === "all" ||
+                category === filter
+            ) {
+
+                card.style.display = "";
+
+                setTimeout(function() {
+
+                    card.classList.add("show");
+
+                }, 10);
+
+            }
+
+            else {
+
+                card.classList.remove("show");
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
